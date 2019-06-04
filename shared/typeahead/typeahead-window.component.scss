@@ -1,0 +1,57 @@
+@import 'mixins';
+
+:host {
+  z-index: 1000;
+  width: calc(100% - 50px);
+  display: none;
+  list-style: none;
+  background-clip: padding-box;
+
+  &.show {
+    display: block;
+  }
+
+  .typeahead-dropdown {
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+      border: 1px solid themed('borderColorPrimary');
+    }
+  }
+
+  .typeahead-item {
+    font-family: $bodyfont;
+    font-size: 1.6rem;
+    line-height: 1.6;
+    border: 0;
+    cursor: pointer;
+    padding: 8px 14px;
+
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+      border-bottom: 1px solid themed('borderColorPrimary');
+      color: themed('headingColorPrimary');
+    }
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+
+    &.active {
+      color: $white;
+
+      @include themify($themes) {
+        background-color: themed('themeColorPrimary');
+      }
+    }
+  }
+}
+
+.typeahead-item {
+  display: block;
+  width: 100%;
+  clear: both;
+  text-align: inherit;
+  white-space: nowrap;
+  appearance: none;
+  -webkit-appearance: none;
+}

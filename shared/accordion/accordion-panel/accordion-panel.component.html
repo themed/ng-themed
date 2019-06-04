@@ -1,0 +1,17 @@
+<xm-accordion-header (click)="toggle(); clicked()">
+  <i
+    class="icon-chevron-left"
+    [ngClass]="{'collapsed': isCollapsed}"></i>
+  <ng-content select="header"></ng-content>
+  <ng-content select="[xm-accordion-header]"></ng-content>
+</xm-accordion-header>
+<div
+  class="body-container"
+  xm-accordion-body
+  #bodyContainer
+  [ngClass]="{'collapsed': isCollapsed, 'loading': isLoading}">
+  <div class="content-wrapper">
+    <ng-content></ng-content>
+    <ng-content select="[xm-accordion-body]"></ng-content>
+  </div>
+</div>

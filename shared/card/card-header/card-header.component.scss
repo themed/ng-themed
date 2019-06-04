@@ -1,0 +1,27 @@
+@import "mixins";
+
+:host {
+  display: flex;
+  justify-content: space-between;
+  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid;
+  border-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-weight: 600;
+  padding: 0;
+  min-height: 60px;
+  margin-bottom: 0;
+  border-bottom: 1px solid;
+
+  @include themify($themes) {
+    border-bottom-color: themed('borderColorPrimary');
+    color: themed('headingColorPrimary');
+    background-color: themed('cardHeaderBackgroundPrimary');
+  }
+}

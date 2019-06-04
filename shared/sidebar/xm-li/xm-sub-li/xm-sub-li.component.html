@@ -1,0 +1,5 @@
+<a (click)="emitSubItemClicked()">
+  <i *ngIf="menuItem.icon" [ngClass]="[menuItem.icon || '']" [style.color]="color"></i>
+  <span>{{menuItem.title}}
+  </span>
+</a>

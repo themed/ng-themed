@@ -1,0 +1,121 @@
+@import 'mixins';
+
+xm-datepicker {
+  display: inline-block;
+
+  @include themify($themes) {
+    border: 1px solid themed('borderColorPrimary');
+  }
+
+  &.datepicker-dropdown {
+    z-index: 1000;
+  }
+
+  .xm-dp-header {
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+    }
+  }
+
+  &.multiple-months {
+
+    .xm-dp-months {
+      flex-wrap: wrap;
+    }
+
+    .xm-dp-month {
+      margin-right: 0.6rem;
+      margin-bottom: 0.6rem;
+      margin-left: 0.6rem;
+
+      .xm-dp-month-name,
+      xm-datepicker-month-view {
+        @include themify($themes) {
+          border-right: 1px solid themed('borderColorPrimary');
+          border-left: 1px solid themed('borderColorPrimary');
+        }
+      }
+    }
+  }
+
+  &.datepicker-flex {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .xm-dp-month {
+      width: 100%;
+
+      .xm-dp-weekday {
+        width: 100%;
+        min-width: none;
+      }
+
+      .xm-dp-day {
+        width: 100%;
+
+        >div {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .xm-dp-month-name {
+
+    @include themify($themes) {
+      background-color: themed('cardHeaderBackgroundPrimary');
+      border-top: 1px solid themed('borderColorPrimary');
+    }
+  }
+}
+
+.xm-dp-month {
+  pointer-events: none;
+  margin-bottom: -1px;
+
+  @include respond-below(xs) {
+    width: 100%;
+  }
+}
+
+.xm-dp-header {
+  position: relative;
+  display: flex;
+  padding: 0;
+  border-bottom: 0;
+}
+
+xm-datepicker-month-view {
+  pointer-events: auto;
+}
+
+.xm-dp-month-name {
+  text-align: center;
+  line-height: 2rem;
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+
+.xm-dp-month {
+
+  &:last-child .xm-dp-week {
+    padding-right: 0;
+  }
+
+  &:first-child .xm-dp-week {
+    padding-left: 0;
+  }
+
+  &>xm-datepicker-month-view>.xm-dp-week:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.xm-dp-months {
+  display: flex;
+}

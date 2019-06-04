@@ -1,0 +1,79 @@
+@import 'mixins';
+
+.notificationToast__buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+
+  @include themify($themes) {
+    border-right: 1px solid themed('borderColorPrimary');
+    border-top: 1px solid themed('borderColorPrimary');
+  }
+
+  .dark-theme & {
+    border-bottom: 1px solid $black;
+  }
+
+  button {
+    position: relative;
+    width: 100%;
+    font-family: $bodyfont;
+    font-size: 1.5rem;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 8px;
+    text-transform: capitalize;
+    transition: 0.3s background-color ease;
+    cursor: pointer;
+
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+      border-left: 1px solid themed('borderColorPrimary');
+      color: themed('headingColorPrimary');
+    }
+
+    .notification-simple & {
+      .dark-theme & {
+        border-left: 1px solid $black;
+      }
+    }
+
+    @media (hover: hover) {
+
+      &:hover,
+      &:focus {
+        @include themify($themes) {
+          background-color: themed('cardHeaderBackgroundPrimary');
+        }
+      }
+    }
+
+    &:active {
+      @include themify($themes) {
+        background-color: themed('cardHeaderBackgroundPrimary');
+      }
+    }
+
+    .light-theme & {
+      border-right: 0;
+    }
+
+    @media (hover: hover) {
+
+      &:hover,
+      &:focus {
+        background: rgba(0, 0, 0, .1);
+        outline: none;
+      }
+    }
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+}

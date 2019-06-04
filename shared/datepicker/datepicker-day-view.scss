@@ -1,0 +1,32 @@
+@import 'mixins';
+
+xm-datepicker-day-view {
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  transition: 0.4s background-color ease;
+
+  @include themify($themes) {
+    color: themed('textColorPrimary');
+  }
+
+  @include respond-below(xs) {
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  &.outside {
+    opacity: 0.5;
+  }
+
+  &.active,
+  &.active-date {
+    color: $white;
+
+    @include themify($themes) {
+      background-color: themed('themeColorPrimary');
+    }
+  }
+}

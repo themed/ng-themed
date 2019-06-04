@@ -1,0 +1,69 @@
+@import 'mixins';
+
+xm-datepicker-navigation-select {
+  .multiple-months & {
+    max-width: 170px;
+
+    @include respond-below(xs) {
+      max-width: none;
+    }
+
+    >.datepicker-select {
+      &:first-of-type {
+        @include themify($themes) {
+          border-left: 1px solid themed('borderColorPrimary');
+
+          @include respond-below(xs) {
+            border-left: 0;
+          }
+        }
+      }
+
+      &:last-of-type {
+        @include themify($themes) {
+          border-right: 1px solid themed('borderColorPrimary');
+
+          @include respond-below(xs) {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  >.datepicker-select {
+    flex: 1 1 auto;
+    padding: 0 1.8rem 0 2.4rem;
+    font-size: 1.45rem;
+    font-weight: 600;
+    border: 0;
+    font-family: $bodyfont;
+    text-transform: uppercase;
+    border-radius: 0;
+    box-shadow: none;
+    appearance: none;
+    transition: 0.4s background-color ease;
+    cursor: pointer;
+
+    @include respond-below(xs) {
+      padding: 0.8rem 0.8rem 0.8rem 1.2rem;
+    }
+
+    &:first-of-type {
+      @include themify($themes) {
+        border-right: 1px solid themed('borderColorPrimary');
+      }
+    }
+
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+      background-color: themed('cardHeaderBackgroundPrimary');
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: themed('cardHeaderBackgroundActive');
+      }
+    }
+  }
+}

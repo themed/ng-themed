@@ -1,0 +1,13 @@
+<div
+  class="notification-backdrop"
+  *ngIf="backdrop >= 0"
+  [style.opacity]="backdrop"></div>
+<div
+  *ngFor="let position of notifications | keys"
+  class="notification notification-{{position}}">
+  <xm-notification-toast
+    *ngFor="let notification of notifications[position] | slice:blockSize_a:blockSize_b"
+    [toast]="notification"
+    (stateChanged)="stateChanged($event)">
+  </xm-notification-toast>
+</div>

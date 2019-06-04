@@ -1,0 +1,64 @@
+@import "mixins";
+
+:host {
+
+  .custom-day {
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+  }
+
+  .custom-day.range,
+  .custom-day:hover {
+    @include themify($themes) {
+      color: $white;
+      background-color: themed('themeColorPrimary');
+    }
+  }
+
+  .custom-day.faded {
+    @include themify($themes) {
+      background-color: rgba(themed('themeColorPrimary'), 0.5);
+    }
+  }
+}
+
+.datepicker-placeholder {
+  min-width: min-content;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: 244px;
+
+  input {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.input-group-append {
+  .btn {
+    padding: 7px 14px;
+  }
+}
+
+.custom-day {
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  transition: 0.4s background-color ease;
+
+  @include respond-below(xs) {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+  }
+}
+
+.custom-day.range,
+.custom-day:hover {
+  color: white;
+}

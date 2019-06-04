@@ -1,0 +1,1039 @@
+/**
+ * Table Of Content
+ *
+ *   0. Reset
+ *   1. Globals
+ *   2. Headings
+ *   3. Padding
+ *   4. Margin
+ *   5. Typography
+ *  11. Buttons
+ *  12. Form Elements
+ *  13. Modal
+ *  14. Notifications
+ *  15. Card
+ *  16. Utilities
+ */
+
+/*******************
+0. Reset
+*******************/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  line-height: 1.5;
+  text-align: left;
+}
+
+article,
+aside,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section {
+  display: block;
+}
+
+[tabindex="-1"]:focus {
+  outline: 0 !important;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+fieldset {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/*******************
+1. Global Styles
+*******************/
+
+* {
+  outline: none;
+}
+
+body {
+  font-family: $bodyfont, sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+html {
+  position: relative;
+  height: 100%;
+  min-height: 100%;
+  font-size: 10px;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1.0;
+}
+
+/*******************
+2. Headings
+*******************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $headingfont;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  line-height: 4.0rem;
+  font-size: 3.6rem;
+  font-weight: 700;
+
+  @include respond-below(sm) {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  line-height: 3.6rem;
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+h3 {
+  line-height: 3.0rem;
+  font-size: 2.1rem;
+}
+
+h4 {
+  line-height: 2.2rem;
+  font-size: 1.8rem;
+}
+
+h5 {
+  line-height: 1.8rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+h6 {
+  line-height: 1.6rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+/*******************
+3. Padding
+*******************/
+
+html body {
+  .p-0 {
+    padding: 0px;
+  }
+
+  .p-10 {
+    padding: 10px;
+  }
+
+  .p-20 {
+    padding: 20px;
+  }
+
+  .p-30 {
+    padding: 30px;
+  }
+
+  .p-l-0 {
+    padding-left: 0px;
+  }
+
+  .p-l-10 {
+    padding-left: 10px;
+  }
+
+  .p-l-20 {
+    padding-left: 20px;
+  }
+
+  .p-r-0 {
+    padding-right: 0px;
+  }
+
+  .p-r-10 {
+    padding-right: 10px;
+  }
+
+  .p-r-20 {
+    padding-right: 20px;
+  }
+
+  .p-r-30 {
+    padding-right: 30px;
+  }
+
+  .p-r-40 {
+    padding-right: 40px;
+  }
+
+  .p-t-0 {
+    padding-top: 0px;
+  }
+
+  .p-t-10 {
+    padding-top: 10px;
+  }
+
+  .p-t-20 {
+    padding-top: 20px;
+  }
+
+  .p-t-30 {
+    padding-top: 30px;
+  }
+
+  .p-b-0 {
+    padding-bottom: 0px;
+  }
+
+  .p-b-5 {
+    padding-bottom: 5px;
+  }
+
+  .p-b-10 {
+    padding-bottom: 10px;
+  }
+
+  .p-b-20 {
+    padding-bottom: 20px;
+  }
+
+  .p-b-30 {
+    padding-bottom: 30px;
+  }
+
+  .p-b-40 {
+    padding-bottom: 40px;
+  }
+}
+
+/*******************
+4. Margin
+*******************/
+
+html body {
+  .m-0 {
+    margin: 0px;
+  }
+
+  .m-l-5 {
+    margin-left: 5px;
+  }
+
+  .m-l-10 {
+    margin-left: 10px;
+  }
+
+  .m-l-15 {
+    margin-left: 15px;
+  }
+
+  .m-l-20 {
+    margin-left: 20px;
+  }
+
+  .m-l-30 {
+    margin-left: 30px;
+  }
+
+  .m-l-40 {
+    margin-left: 40px;
+  }
+
+  .m-r-5 {
+    margin-right: 5px;
+  }
+
+  .m-r-10 {
+    margin-right: 10px;
+  }
+
+  .m-r-15 {
+    margin-right: 15px;
+  }
+
+  .m-r-20 {
+    margin-right: 20px;
+  }
+
+  .m-r-30 {
+    margin-right: 30px;
+  }
+
+  .m-r-40 {
+    margin-right: 40px;
+  }
+
+  .m-t-0 {
+    margin-top: 0px;
+  }
+
+  .m-t-5 {
+    margin-top: 5px;
+  }
+
+  .m-t-10 {
+    margin-top: 10px;
+  }
+
+  .m-t-15 {
+    margin-top: 15px;
+  }
+
+  .m-t-20 {
+    margin-top: 20px;
+  }
+
+  .m-t-30 {
+    margin-top: 30px;
+  }
+
+  .m-t-40 {
+    margin-top: 40px;
+  }
+
+  .m-b-0 {
+    margin-bottom: 0px;
+  }
+
+  .m-b-5 {
+    margin-bottom: 5px;
+  }
+
+  .m-b-10 {
+    margin-bottom: 10px;
+  }
+
+  .m-b-15 {
+    margin-bottom: 15px;
+
+    &-sm {
+      @include respond-below(sm) {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-xs {
+      @include respond-below(xs) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  .m-b-20 {
+    margin-bottom: 20px;
+  }
+
+  .m-b-30 {
+    margin-bottom: 30px;
+  }
+
+  .m-b-40 {
+    margin-bottom: 40px;
+  }
+}
+
+/*******************
+5. Typography
+*******************/
+
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-normal {
+  font-weight: normal;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.text-danger {
+  color: $danger !important;
+}
+
+.text-warning {
+  color: $warning !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-info {
+  color: $info !important;
+}
+
+/*******************
+11. Buttons
+******************/
+
+button {
+
+  &.active,
+  &:active,
+  &:focus {
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+.btn {
+  font-size: 1.6rem;
+  padding: 7px 14px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background-color 0.4s ease;
+
+  @include respond-below(sm) {
+    white-space: normal;
+  }
+
+  &:hover {
+    box-shadow: none;
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+
+    &:hover {
+      opacity: 0.35 !important;
+    }
+  }
+}
+
+.btn-lg {
+  padding: 14px 24px;
+}
+
+.btn-md {
+  padding: 7px 14px;
+}
+
+.btn-sm {
+  padding: 5px 15px;
+  font-size: 1.3rem !important;
+}
+
+.btn-xs {
+  padding: 1px 7px;
+  font-size: 1.1rem;
+}
+
+.btn-sm-icon {
+  display: flex;
+  align-items: center;
+  padding: 5px 15px 5px 10px !important;
+  font-size: 1.3rem !important;
+
+  i {
+    margin-right: 3px;
+  }
+}
+
+.btn-icon-search {
+  i {
+    font-size: 2.3rem;
+  }
+}
+
+.btn-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  height: 26px;
+  width: 26px;
+  min-width: 26px;
+  cursor: pointer;
+  margin-right: 5px;
+  border-radius: 50%;
+  transition: 0.4s ease;
+}
+
+/*******************
+12. Form Elements
+******************/
+
+.form-control {
+  min-height: 34px;
+  height: auto;
+  font-size: 1.6rem;
+  transition: background-color 0.4s ease, 0.4s border ease;
+  padding: 1.175rem 1.25rem;
+  margin: 0;
+  line-height: 1.6;
+  font-family: $bodyfont;
+  display: block;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 400;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  appearance: none;
+
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.form-control-sm {
+  font-size: 1.4rem;
+  max-height: 20px;
+
+  +.input-group-append {
+    .btn {
+      padding: 7px 12px;
+    }
+  }
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.custom-control-input:focus~.custom-control-indicator {
+  box-shadow: none;
+}
+
+.custom-control-input:checked~.custom-control-indicator {
+  background-color: $success;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group>.form-control,
+.input-group>.custom-select {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+}
+
+.form-horizontal label {
+  margin-bottom: 0px;
+}
+
+.form-control-static {
+  padding-top: 0px;
+}
+
+.form-bordered .form-group {
+  border-bottom: 1px solid $black;
+  padding-bottom: 20px;
+}
+
+.input-group-prepend {
+  display: flex;
+}
+
+.input-group-append {
+  display: flex;
+  margin-left: -1px;
+
+  .btn {
+    padding: 7px 20px;
+    line-height: 0;
+    margin: 0;
+  }
+}
+
+.input-group-chevron-sm {
+  .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+  }
+}
+
+.form-control-label {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+// Change default yellow input autofill
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: inherit !important;
+  -webkit-box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  box-shadow: 0 0 0px 1000px #FFFFFF inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.control-group {
+  vertical-align: top;
+  text-align: left;
+  padding: 0 15px;
+}
+
+.control--label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 15px;
+  cursor: pointer;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.table {
+  .control--label {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
+.control--label input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.control__indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+}
+
+.control--radio .control__indicator {
+  border-radius: 50%;
+}
+
+.control--label input:disabled~.control__indicator {
+  pointer-events: none;
+}
+
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.control--label input:checked~.control__indicator:after {
+  display: block;
+}
+
+.control--checkbox .control__indicator:after {
+  left: 8px;
+  top: 5px;
+  width: 5px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.control--checkbox input:disabled~.control__indicator:after {
+  border-color: #7b7b7b;
+}
+
+.control--radio .control__indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.control--radio input:disabled~.control__indicator:after {
+  background: #7b7b7b;
+}
+
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: #7b7b7b transparent transparent transparent;
+}
+
+/* Input Helper */
+
+.input-helper {
+  padding: 7px 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s ease;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  @include respond-below(sm) {
+    display: none;
+  }
+}
+
+.input-helper-left {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+.input-helper-right {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+/* Custom-select */
+
+.custom-select {
+  font-size: 1.6rem;
+  font-family: $bodyfont;
+  background-size: 17px;
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  transition: 0.4s background-color ease;
+  background-position: right 15px center;
+  background-repeat: no-repeat;
+  padding: 1.175rem 1.25rem;
+  line-height: 1.6;
+  min-height: 50px;
+  border-radius: 0.25rem;
+  box-shadow: none;
+  appearance: none;
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.custom-select-sm {
+  font-size: 1.4rem;
+  padding: 0.75rem 1.25rem;
+  min-height: 38px;
+  background-size: 12px !important;
+}
+
+/* Textarea */
+
+textarea {
+  resize: vertical;
+}
+
+/*******************
+13. Modal
+/*******************/
+
+.modal-close {
+  display: flex;
+
+  .close {
+    float: none;
+    margin: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    opacity: 1;
+    text-shadow: none;
+    padding: 10px 25px;
+    font-size: 2.3rem;
+    transition: background-color 0.4s ease;
+    cursor: pointer;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+}
+
+/*******************
+14. Notifications
+/*******************/
+
+.cm-notification-title {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.cm-notification-channel-row {
+  display: block;
+  margin-bottom: 5px;
+
+  >div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.cm-notification-row {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  span {
+    font-weight: 500;
+  }
+
+  ul {
+    padding-left: 19px;
+    margin: 0;
+    padding: 10px 30px 10px 30px;
+
+    li {
+      font-size: 1.15rem;
+    }
+  }
+}
+
+.cm-notification-bin-preview {
+  border-radius: 0;
+  font-size: 1.1rem;
+  height: 25px;
+  width: 25px;
+  margin: 2px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.cm-notification-bin-type {
+  padding-left: 5px;
+  font-weight: 500;
+}
+
+/*****************
+15. Card
+*****************/
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+
+  .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 15px;
+  }
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  min-height: 62px;
+  padding: 1.5rem 2.05rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+  font-weight: 600;
+
+  @include respond-below(md) {
+    justify-content: center;
+  }
+}
+
+.card-subheader {
+  display: flex;
+  padding: 8px 20px;
+
+  .card-subheader-title {
+    font-size: 1.5rem;
+  }
+}
+
+.card-header-has-buttons {
+  justify-content: space-between;
+
+  @include respond-below(sm) {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .card-heading-buttons {
+    display: flex;
+
+    @include respond-below(md) {
+      margin-top: 0.5rem;
+    }
+
+    button {
+      margin-left: 0.5rem;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.card-header-sm {
+  padding: 1rem 1.65rem;
+  min-height: 50px;
+}
+
+.card-body {
+  padding: 2.5rem;
+  border-radius: 0 0 4px 4px;
+  overflow-x: auto;
+  border: 0;
+}
+
+.profile-group-table {
+  display: flex;
+  align-items: center;
+
+  >div {
+    &:first-of-type {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.profile-image-table {
+  height: 3.5rem;
+  width: 3.5rem;
+  overflow: hidden;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.profile-icon-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 3.5rem;
+  overflow: hidden;
+  border-radius: 100%;
+}
+
+/*******************
+16. Utilities
+*******************/
+
+.clickable {
+  cursor: pointer;
+}
+
+.visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: opacity .5s linear;
+  display: inherit;
+}
+
+.hidden {
+  visibility: hidden !important;
+  display: none;
+  opacity: 0 !important;
+  transition: visibility 0s .5s, opacity .5s linear;
+}

@@ -1,0 +1,17 @@
+.period_selector {
+  & select.custom-select {
+    width: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 5rem;
+    font-size: 1.4rem;
+    height: auto;
+    min-height: unset;
+  }
+}
+#updateStats{
+  font-size: 2rem;
+  margin-left: auto;
+  margin-right: 1rem;
+}
+/*# sourceURL=period-selector.component.scss */

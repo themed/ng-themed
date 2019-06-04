@@ -1,0 +1,372 @@
+/* -------------------------------- 
+
+Title: Tabs
+Descr: Tabs are multiple content sections (panels), accessible one at a time using control labels
+
+-------------------------------- */
+@import 'mixins';
+
+:host {
+  display: flex;
+
+  .tabs__layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .tabs__controls {
+      @include themify($themes) {
+        background-color: themed('cardBackgroundPrimary');
+        border-bottom: 1px solid themed('borderColorPrimary');
+      }
+
+      @include respond-above(md) {
+        @include themify($themes) {
+          background-color: themed('cardHeaderBackgroundPrimary');
+        }
+      }
+    }
+
+    .tab__control--link {
+      @include themify($themes) {
+        background-color: themed('cardHeaderBackgroundPrimary');
+        color: themed('textColorPrimary');
+        border: 1px solid themed('borderColorPrimary');
+      }
+
+      @include respond-above(md) {
+        @include themify($themes) {
+          border-top: 0;
+          border-right: 1px solid themed('borderColorPrimary');
+          border-bottom: 1px solid themed('borderColorPrimary');
+          border-left: 0;
+        }
+      }
+
+      &:hover {
+        @include themify($themes) {
+          background-color: themed('cardBackgroundPrimary');
+        }
+      }
+
+      &.disabled {
+        cursor: auto !important;
+        opacity: 0.25;
+
+        @include themify($themes) {
+          background-color: transparent !important;
+          color: themed('textColorMuted');
+        }
+      }
+    }
+
+    .tab__control--selected {
+      border-bottom: 0;
+
+      .tab__control--link {
+        @include themify($themes) {
+          background-color: themed('themeColorPrimary');
+          border: 1px solid themed('borderColorPrimaryActive');
+          color: #ffffff;
+        }
+
+        @include respond-above(md) {
+          @include themify($themes) {
+            background-color: themed('cardBackgroundPrimary');
+            border-top: 0;
+            border-right: 1px solid themed('borderColorPrimary');
+            border-bottom: 0;
+            border-left: 0;
+            color: themed('textColorSecondary');
+          }
+        }
+      }
+    }
+
+    &.justify-content-center {
+      .tab__control {
+        &:first-of-type {
+          .tab__control--link {
+            @include respond-above(md) {
+              @include themify($themes) {
+                border-left: 1px solid themed('borderColorPrimary') !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.justify-content-end {
+      .tab__control--link {
+
+        @include respond-above(md) {
+          @include themify($themes) {
+            border-top: 0 !important;
+            border-right: 0 !important;
+            border-bottom: 0 !important;
+            border-left: 1px solid themed('borderColorPrimary') !important;
+          }
+        }
+      }
+    }
+
+    .tabs__panels {
+      @include themify($themes) {
+        border-top: 1px solid themed('borderColorPrimary');
+      }
+
+      @include respond-above(md) {
+        height: 100%;
+
+        @include themify($themes) {
+          border-top: 0;
+        }
+      }
+    }
+  }
+
+  .pills__layout {
+    .tab__control--link {
+      @include themify($themes) {
+        background-color: themed('cardHeaderBackgroundPrimary');
+        color: themed('textColorPrimary');
+        border: 1px solid themed('borderColorPrimary');
+      }
+
+      &:hover,
+      &:focus {
+        @include themify($themes) {
+          background-color: themed('cardBackgroundPrimary');
+        }
+      }
+
+      &.disabled {
+        cursor: auto !important;
+        opacity: 0.25;
+
+        @include themify($themes) {
+          background-color: transparent !important;
+          color: themed('textColorMuted');
+        }
+
+        &.active,
+        &:active,
+        &:focus,
+        &:hover {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    .tab__control--selected {
+      border-bottom: 0;
+
+      .tab__control--link {
+        @include themify($themes) {
+          background-color: themed('themeColorPrimary');
+          border: 1px solid themed('borderColorPrimaryActive');
+          color: #ffffff;
+        }
+      }
+    }
+
+    .tabs__panels {
+      @include themify($themes) {
+        border-top: 1px solid themed('borderColorPrimary');
+      }
+    }
+  }
+
+  .tabs__panels {
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+    }
+  }
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.tabs-fill {
+  >li {
+    flex: none;
+
+    @include respond-above(md) {
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    >a {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.tabs-justified {
+  >li {
+
+    @include respond-above(md) {
+      flex-basis: 0;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    >a {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.tabs__controls--container {
+  flex: 1 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.tabs__controls {
+  padding: 0;
+  display: flex;
+  width: 100%;
+  list-style: none;
+}
+
+.tabs__layout {
+  @include respond-above(md) {
+    padding: 0;
+    flex-wrap: nowrap;
+  }
+
+  .tabs__controls {
+    padding: 15px;
+    margin: 0 0 -5px 0;
+    flex-wrap: wrap;
+    overflow: hidden;
+
+    @include respond-above(md) {
+      padding: 0;
+      margin: 0;
+      overflow: visible;
+      flex-wrap: nowrap;
+    }
+  }
+
+  .tab__control {
+    margin: 0 5px 5px 0;
+
+    @include respond-above(md) {
+      margin-top: 0;
+      margin-right: 0;
+      margin-bottom: -1px;
+      margin-left: 0;
+    }
+  }
+}
+
+.pills__layout {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+
+  .tabs__controls {
+    padding: 15px;
+    margin: 0 0 -5px 0;
+    flex-wrap: wrap;
+  }
+
+  .tab__control {
+    margin: 0 5px 5px 0;
+  }
+
+  .tab__control--link {
+    display: inline-flex;
+    font-weight: 600;
+    padding: 5px 10px;
+    white-space: nowrap;
+    color: inherit;
+    transition: background-color 0.26s ease;
+  }
+}
+
+.tab__control {
+  display: inline-block;
+  scroll-snap-align: start;
+
+  @include respond-above(md) {
+    margin: 0;
+  }
+
+  &::first-child {
+    @include respond-above(md) {
+      margin-left: 0;
+    }
+  }
+}
+
+.tab__control--link {
+  display: inline-flex;
+  font-weight: 600;
+  padding: 5px 10px;
+  white-space: nowrap;
+  color: inherit;
+  transition: background-color 0.26s ease;
+
+  @include respond-above(md) {
+    height: 100%;
+    padding: 1.5rem 2.05rem;
+  }
+}
+
+.tabs__control--selected {
+  @include respond-above(md) {
+    position: relative;
+  }
+
+  &::after {
+    @include respond-above(md) {
+      // border bottom -> it covers the border of the panel element
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: calc(-1 * 2px);
+      width: 100%;
+      height: 2px;
+      z-index: 1;
+    }
+  }
+}
+
+
+.tabs__controls {
+  a {
+    text-decoration: none;
+  }
+}
+
+.tabs__panels {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  height: calc(100% - 67px);
+}
+
+.tabs__panel {
+  height: 100%;
+  width: 100%;
+}

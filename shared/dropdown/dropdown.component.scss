@@ -1,0 +1,9 @@
+@import 'mixins';
+
+:host {
+  position: relative;
+
+  &.show {
+    display: block;
+  }
+}

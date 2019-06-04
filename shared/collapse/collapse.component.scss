@@ -1,0 +1,72 @@
+@import 'mixins';
+
+:host {
+  margin-bottom: 0.5em;
+  position: relative;
+  display: block;
+
+  &.open {
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+
+  &.empty {
+    svg {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .collapse-header {
+      margin-bottom: 0;
+    }
+  }
+
+  .collapse-header {
+    cursor: pointer;
+
+    @include themify($themes) {
+      color: themed('headingColorPrimary');
+    }
+  }
+
+  svg {
+    transition: transform 0.2s;
+
+    path {
+      @include themify($themes) {
+        fill: themed('headingColorPrimary');
+      }
+    }
+  }
+}
+
+.collapse-header {
+  display: inline-block;
+  margin-bottom: 0.25em;
+  font-weight: 500;
+
+  >div {
+    display: flex;
+  }
+}
+
+.collapse-content {
+  padding: 0 1em;
+}
+
+svg {
+  max-width: 100%;
+  height: 0.65em;
+  width: 0.65em;
+  min-height: 0.65em;
+  min-width: 0.65em;
+  line-height: 1;
+  margin-top: 0.35em;
+  margin-right: 0.35em;
+}
+
+xmCollapseContent {
+  background: green;
+}

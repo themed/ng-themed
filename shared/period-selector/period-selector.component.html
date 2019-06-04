@@ -1,0 +1,22 @@
+<div class="period_selector">
+  <div class="input-group">
+    <div class="input-helper input-helper-left">Filter By:</div>
+    <select
+      #periodSelector
+      (change)="updatePeriod($event)"
+      id="periodSelector"
+      class="custom-select">
+      <option
+        *ngFor="let p of periodOptions"
+        [value]="p.value">
+        {{p.text}}
+      </option>
+    </select>
+  </div>
+
+  <!-- to reenable the last updated time stamp and the refresh button, uncomment below -->
+  <!-- <span id="lastUpdated" >Updated: <span class="value"> {{lastUpdated | timeAgo}}</span></span>
+
+  <button (click)="updateStats()" id="updateStats" class="clickable"><i class="icon-refresh"></i></button> -->
+
+</div>

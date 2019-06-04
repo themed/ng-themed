@@ -1,0 +1,159 @@
+@import 'mixins';
+
+:host {
+
+  border-bottom: 1px solid;
+  list-style: none;
+
+  @include themify($themes) {
+    border-bottom-color: themed('borderColorPrimary');
+  }
+
+  a {
+    @include themify($themes) {
+      background-color: themed('sidebarBackgroundColor');
+      color: themed('textColorPrimary');
+      text-decoration: none;
+    }
+
+    display: flex;
+    align-items: center;
+    padding: 8px 35px 8px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    min-height: 52px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.4s ease,
+    color 0.4s ease;
+
+    &:focus,
+    &:active,
+    &:hover,
+    &.router-link-active {
+      @include themify($themes) {
+        background-color: themed('sidebarBackgroundActiveColor');
+        color: themed('themeColorPrimaryLight');
+      }
+    }
+
+    i {
+      margin: 6px 8px;
+      width: 31px;
+      font-size: 24px;
+      display: inline-block;
+      vertical-align: middle;
+
+      @include themify($themes) {
+        color: themed('textColorPrimary');
+      }
+    }
+  }
+
+  ul {
+    li {
+      display: flex;
+      max-height: 52px;
+      overflow: hidden;
+    }
+  }
+
+  i {
+    width: 31px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px 8px;
+    font-size: 24px;
+  }
+
+  .label {
+    float: right;
+    margin-top: 6px;
+  }
+
+  &.active {
+    a {
+      @include themify($themes) {
+        background-color: themed('sidebarBackgroundActiveColor');
+        color: themed('themeColorPrimaryLight');
+      }
+
+      i {
+        @include themify($themes) {
+          color: themed('themeColorPrimaryLight');
+        }
+      }
+    }
+  }
+
+  // mini-sidebar
+
+  &.collapsed-item {
+    border-bottom: 0;
+
+    @include respond-above(sm) {
+      position: relative;
+    }
+
+    &:hover:not(.active)>a {
+      @include respond-above(sm) {
+        width: 290px;
+      }
+
+      .hide-menu {
+        @include respond-above(sm) {
+          display: inline;
+        }
+      }
+    }
+
+    &:hover:not(.active)>ul {
+      @include respond-above(sm) {
+        height: auto !important;
+        overflow: auto;
+        display: block;
+      }
+    }
+
+    a {
+      padding: 12px 14px;
+      border-top: 1px solid;
+      border-right: 1px solid;
+
+      @include respond-above(sm) {
+        padding: 12px 14px;
+        width: 70px;
+      }
+
+      @include themify($themes) {
+        border-top-color: themed('borderColorPrimary');
+        border-right-color: themed('borderColorPrimary');
+      }
+
+      &.has-arrow:after {
+        @include respond-above(sm) {
+          display: none;
+        }
+      }
+    }
+
+    ul {
+      max-height: 208px;
+      border-bottom: 1px solid;
+
+      @include themify($themes) {
+        border-bottom-color: themed('borderColorPrimary');
+      }
+
+      @include respond-above(sm) {
+        position: absolute;
+        left: 70px;
+        width: 220px;
+        z-index: 1001;
+        display: none;
+      }
+    }
+  }
+
+}

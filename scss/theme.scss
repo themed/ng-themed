@@ -1,0 +1,695 @@
+@import 'variable';
+
+/* 
+This stylesheet is intended for
+globally styling elements / components with
+multi-theme color based properties
+ *
+ * Table Of Content
+ *
+ *  01. Typography
+ *  02. Forms
+ *  04. Buttons
+ *  05. Input Helper
+ *  10. Cards
+ *  14. Notifications
+ *  23. Channel Maps
+ *  25. Modal
+ */
+
+/*******************
+01. Typography
+*******************/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include themify($themes) {
+    color: themed('textColorPrimary');
+  }
+}
+
+p,
+label,
+li,
+td,
+th {
+  @include themify($themes) {
+    color: themed('textColorPrimary');
+  }
+}
+
+a {
+  transition: color 0.4s ease;
+
+  @include themify($themes) {
+    color: themed('themeColorPrimaryLight');
+  }
+
+  &:hover,
+  &:focus {
+    @include themify($themes) {
+      color: themed('themeColorPrimary');
+    }
+  }
+}
+
+/*******************
+02. Forms
+*******************/
+
+select {
+  option {
+
+    // PC browsers fix
+    @include themify($themes) {
+      background-color: themed('inputBackgroundPrimary');
+      color: themed('textColorPrimary');
+    }
+  }
+}
+
+.form-control {
+  @include themify($themes) {
+    background-color: themed('inputBackgroundPrimary');
+    border: 1px solid themed('borderColorPrimary');
+    color: themed('textColorPrimary');
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    @include themify($themes) {
+      background-color: lighten(themed('themeStageColor'), 2%);
+      border-color: themed('borderColorPrimary');
+    }
+  }
+
+  &::-webkit-input-placeholder {
+    opacity: 0.4 !important;
+
+    /* for older chrome versions. may no longer apply. */
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 18- */
+    opacity: 0.4 !important;
+
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    opacity: 0.4 !important;
+
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &:-ms-input-placeholder {
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &:disabled {
+    background-color: $alabaster;
+
+    @include themify($themes) {
+      background-color: themed('inputBackgroundPrimary');
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: lighten(themed('inputBackgroundPrimary'), 2%);
+      }
+    }
+  }
+}
+
+.control__indicator {
+  transition: background-color 0.4s ease;
+
+  @include themify($themes) {
+    background-color: themed('checkBoxPrimary');
+  }
+}
+
+.control--label:hover input~.control__indicator,
+.control--label input:focus~.control__indicator {
+  @include themify($themes) {
+    background-color: darken(themed('checkBoxPrimary'), 15%);
+  }
+}
+
+.control--label input:checked~.control__indicator {
+  @include themify($themes) {
+    background-color: themed('themeColorPrimary');
+  }
+}
+
+.control--label:hover input:not([disabled]):checked~.control__indicator,
+.control--label input:checked:focus~.control__indicator {
+  @include themify($themes) {
+    background-color: themed('themeColorPrimaryDark');
+  }
+}
+
+.control--label input:disabled~.control__indicator {
+  opacity: 0.45;
+
+  @include themify($themes) {
+    background-color: themed('checkBoxPrimary');
+  }
+}
+
+.custom-select {
+  background-size: 17px;
+
+  @include themify($themes) {
+    background-color: themed('inputBackgroundPrimary');
+    background-image: themed('selectArrowPrimary');
+    border-color: themed('borderColorPrimary');
+    color: themed('textColorPrimary');
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    @include themify($themes) {
+      background-color: lighten(themed('inputBackgroundPrimary'), 2%);
+      border-color: themed('borderColorPrimary');
+    }
+  }
+}
+
+.form-validation {
+  input {
+
+    &[type="text"],
+    &[type="number"],
+    &[type="tel"],
+    &[type="email"],
+    &[type="search"] {
+      &.ng-invalid.ng-touched {
+        border: 1px solid $danger;
+
+        @include themify($themes) {
+          background-color: themed('inputValidationBackground');
+        }
+
+        +.input-group-append {
+          .btn {
+            border: 1px solid $danger !important;
+
+            @include themify($themes) {
+              background-color: themed('inputValidationBackground') !important;
+            }
+          }
+        }
+      }
+    }
+
+    &.is-invalid {
+      box-shadow: none;
+      border: 1px solid $danger !important;
+
+      @include themify($themes) {
+        background-color: themed('inputValidationBackground');
+      }
+
+      +.input-group-append {
+        .btn {
+          border: 1px solid $danger !important;
+
+          @include themify($themes) {
+            background-color: themed('inputValidationBackground') !important;
+          }
+        }
+      }
+    }
+  }
+
+  textarea {
+    &.ng-invalid.ng-touched {
+      border: 1px solid $danger;
+
+      @include themify($themes) {
+        background-color: themed('inputValidationBackground');
+      }
+    }
+
+    &.is-invalid {
+      box-shadow: none;
+      border: 1px solid $danger !important;
+
+      @include themify($themes) {
+        background-color: themed('inputValidationBackground');
+      }
+    }
+  }
+
+  select {
+    &.ng-invalid.ng-touched {
+      border: 1px solid $danger;
+
+      @include themify($themes) {
+        background-color: themed('inputValidationBackground');
+      }
+    }
+
+    &.is-invalid {
+      box-shadow: none;
+      border: 1px solid $danger !important;
+
+      @include themify($themes) {
+        background-color: themed('inputValidationBackground');
+      }
+    }
+  }
+}
+
+.disabled-textarea-replicate {
+  border: 1px solid;
+  padding: 1.175rem 1.25rem;
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: 0.4s background-color ease;
+
+  @include themify($themes) {
+    background-color: themed('inputDisabledBackground');
+    border-color: themed('borderColorPrimary');
+    color: themed('textColorPrimary');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: themed('inputDisabledBackground');
+      border-color: themed('borderColorPrimary');
+      color: themed('textColorPrimary');
+    }
+  }
+}
+
+/*******************
+04. Buttons
+*******************/
+
+.btn {
+  border: 1px solid;
+  outline: 0;
+  box-shadow: none;
+
+  @include themify($themes) {
+    border-color: themed('borderBtnColorPrimary') !important;
+  }
+
+  &:hover {
+    border: 1px solid;
+    box-shadow: none;
+
+    @include themify($themes) {
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    border: 1px solid !important;
+    box-shadow: none !important;
+
+    @include themify($themes) {
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    outline: 0;
+    box-shadow: none;
+
+    @include themify($themes) {
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+}
+
+.btn-primary,
+.btn-themecolor {
+  color: $white !important;
+
+  @include themify($themes) {
+    background-color: themed('themeColorPrimary');
+    border-color: themed('borderBtnColorPrimary') !important;
+  }
+
+  &:hover {
+    color: $white !important;
+
+    @include themify($themes) {
+      background-color: themed('themeColorPrimaryDark');
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    color: $white;
+
+    @include themify($themes) {
+      background-color: themed('themeColorPrimaryDark');
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    color: $white;
+
+    @include themify($themes) {
+      background-color: themed('themeColorPrimaryDark');
+      border-color: themed('borderBtnColorPrimary') !important;
+    }
+  }
+}
+
+.btn-secondary {
+  @include themify($themes) {
+    background-color: themed('buttonColorSecondary') !important;
+    border-color: themed('borderBtnColorSecondary') !important;
+    color: themed('textColorPrimary') !important;
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+}
+
+.btn-icon-circle {
+  @include themify($themes) {
+    background-color: themed('buttonColorSecondary');
+    border-color: themed('borderColorPrimary');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%) !important;
+      border-color: themed('borderBtnColorSecondary') !important;
+      color: themed('textColorPrimary') !important;
+    }
+  }
+}
+
+/*******************
+05. Input Helper
+*******************/
+
+.input-helper {
+  @include themify($themes) {
+    background-color: darken(themed('buttonColorSecondary'), 5%);
+    color: themed('textColorPrimary');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 4%);
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &.active,
+  &:active,
+  &:focus {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 4%);
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 4%);
+      color: themed('textColorPrimary');
+    }
+  }
+}
+
+.input-helper-left {
+  border-top: 1px solid;
+  border-right: 0;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+
+  @include themify($themes) {
+    border-color: themed('borderBtnColorSecondary');
+  }
+}
+
+.input-helper-right {
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 0;
+
+  @include themify($themes) {
+    border-color: themed('borderBtnColorSecondary');
+  }
+}
+
+/*******************
+10. Cards
+*******************/
+
+.card {
+  @include themify($themes) {
+    background-color: themed('cardBackgroundPrimary');
+    // border-color: themed('borderColorPrimary');
+  }
+}
+
+.card-header {
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid;
+  border-left: 0;
+
+  @include themify($themes) {
+    color: themed('cardHeaderTextPrimary');
+    background-color: themed('cardHeaderBackgroundPrimary');
+    border-bottom-color: themed('borderColorPrimary');
+  }
+}
+
+.card-subheader {
+  border-bottom: 1px solid;
+
+  @include themify($themes) {
+    color: themed('cardHeaderTextPrimary');
+    background-color: themed('cardHeaderBackgroundPrimary');
+    border-bottom-color: themed('borderColorPrimary');
+  }
+}
+
+.profile-image-table,
+.profile-icon-table {
+  border: 1px solid;
+
+  @include themify($themes) {
+    border-color: themed('borderColorPrimary');
+  }
+}
+
+/*******************
+14. Notifications
+*******************/
+
+.cm-notification-title {
+  @include themify($themes) {
+    color: themed('headingColorPrimary');
+  }
+}
+
+.cm-notification-bin-type {
+  @include themify($themes) {
+    color: themed('headingColorPrimary');
+  }
+}
+
+.cm-notification-row {
+  div {
+    @include themify($themes) {
+      color: themed('headingColorPrimary');
+    }
+  }
+
+  ul {
+    border: 1px solid;
+
+    @include themify($themes) {
+      border-color: themed('borderColorPrimary');
+    }
+  }
+}
+
+.cm-notification-bin-preview {
+  border: 1px solid $black;
+  color: $white;
+}
+
+/*******************
+23. Channel Maps
+*******************/
+
+.VIDEO {
+  background-color: $VIDEO;
+}
+
+.OFDM {
+  background-color: $OFDM;
+}
+
+.ANALOG {
+  background-color: $ANALOG;
+}
+
+.VOD {
+  background-color: $VOD;
+}
+
+.DOCSIS {
+  background-color: $DOCSIS;
+}
+
+.OTHERANALOG {
+  background-color: $OTHERANALOG;
+}
+
+.OTHERDIGITAL {
+  background-color: $OTHERDIGITAL;
+}
+
+.INACTIVE,
+.UNKNOWN {
+  @include themify($themes) {
+    background-color: themed('cardHeaderBackgroundPrimary');
+    color: themed('textColorPrimary');
+  }
+
+  &:hover {
+    @include themify($themes) {
+      background-color: darken(themed('cardHeaderBackgroundPrimary'), 2%);
+    }
+  }
+}
+
+/********************
+25. Modal
+/*******************/
+
+.modal-content {
+  border: 1px solid;
+
+  @include themify($themes) {
+    background-color: themed('cardBackgroundPrimary');
+    border-color: themed('borderColorPrimary');
+  }
+
+  .modal-header {
+    border-bottom: 1px solid;
+
+    @include themify($themes) {
+      background-color: themed('cardHeaderBackgroundPrimary');
+      border-bottom-color: themed('borderColorPrimary');
+    }
+
+    span {
+      @include themify($themes) {
+        color: themed('headingColorPrimary');
+      }
+    }
+  }
+
+  .close {
+
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+      background-color: themed('cardHeaderBackgroundPrimary');
+      border-left: 1px solid themed('borderColorPrimary');
+    }
+
+    &:hover {
+      @include themify($themes) {
+        background-color: darken(themed('cardHeaderBackgroundPrimary'), 2%);
+      }
+    }
+  }
+
+  .modal-subheader {
+    border-bottom: 1px solid;
+
+    @include themify($themes) {
+      border-bottom-color: themed('borderColorPrimary');
+    }
+  }
+
+  .modal-body {
+    @include themify($themes) {
+      color: themed('textColorPrimary');
+    }
+
+    p {
+      @include themify($themes) {
+        color: themed('textColorPrimary');
+      }
+    }
+  }
+}

@@ -1,0 +1,330 @@
+@import 'mixins';
+
+$sizes: 32;
+
+$lg: (horizontal: 14px,
+  vertical: 8px);
+$md: (horizontal: 12px,
+  vertical: 6px);
+$sm: (horizontal: 8px,
+  vertical: 4px);
+$xs: (horizontal: 5px,
+  vertical: 1px);
+
+:host {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 400;
+  text-align: left;
+  font-family: $bodyfont;
+  white-space: nowrap;
+
+  @include respond-below(xs) {
+    white-space: normal;
+  }
+
+  &.xm {
+    cursor: pointer;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    transition: background-color 0.4s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+      box-shadow: none;
+    }
+
+    i,
+    span {
+      display: inline-block;
+    }
+
+    .hide-text-node {
+      display: none;
+    }
+  }
+
+  &.xm-lg {
+    height: 36px;
+    padding: 0 map-get($lg, horizontal);
+    font-size: 1.6rem;
+
+    @include respond-below(xs) {
+      height: auto;
+      padding: (map-get($lg, horizontal)/2) map-get($lg, horizontal);
+    }
+  }
+
+  &.xm-md {
+    height: 32px;
+    padding: 0 map-get($md, horizontal);
+    font-size: 1.4rem;
+
+    @include respond-below(xs) {
+      height: auto;
+      padding: (map-get($md, horizontal)/2) map-get($md, horizontal);
+    }
+  }
+
+  &.xm-sm {
+    height: 28px;
+    padding: 0 map-get($sm, horizontal);
+    font-size: 1.3rem;
+
+    @include respond-below(xs) {
+      height: auto;
+      padding: (map-get($sm, horizontal)/2) map-get($sm, horizontal);
+    }
+  }
+
+  &.xm-xs {
+    height: 24px;
+    padding: 0 map-get($xs, horizontal);
+    font-size: 1.1rem;
+
+    @include respond-below(xs) {
+      height: auto;
+      padding: (map-get($xs, horizontal)/2) map-get($xs, horizontal);
+    }
+  }
+
+  &.xm-icon {
+
+    &.xm-lg {
+      em {
+        font-size: 2.3rem;
+      }
+
+      span {
+        margin-left: map-get($lg, horizontal);
+      }
+    }
+
+    &.xm-md {
+
+      em {
+        margin-top: 1px;
+        font-size: 2rem;
+
+        @include respond-below(xs) {
+          margin-top: 0;
+        }
+      }
+
+      span {
+        margin-top: 1px;
+        margin-left: map-get($md, vertical);
+
+        @include respond-below(xs) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    &.xm-sm {
+
+      em {
+        font-size: 1.3rem;
+      }
+
+      span {
+        margin-left: map-get($sm, horizontal);
+
+        &.show-text-node {
+          margin-right: map-get($sm, horizontal);
+        }
+      }
+    }
+
+    &.xm-xs {
+
+      span {
+        margin-left: map-get($xs, horizontal);
+      }
+    }
+  }
+
+  &.xm-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 26px;
+    width: 26px;
+    min-width: 26px;
+    border-radius: 50%;
+  }
+
+  &.xm-primary {
+    @extend .xm;
+    color: $white;
+    border: 1px solid;
+
+    @include themify($themes) {
+      background-color: themed('themeColorPrimary');
+      border-color: themed('borderBtnColorPrimary');
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+
+      @include themify($themes) {
+        background-color: themed('themeColorPrimaryDark');
+      }
+    }
+  }
+
+  &.xm-secondary {
+    @extend .xm;
+    border: 1px solid;
+
+    @include themify($themes) {
+      background-color: themed('buttonColorSecondary');
+      border-color: themed('borderBtnColorSecondary');
+      color: themed('textColorPrimary');
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      @include themify($themes) {
+        background-color: darken(themed('buttonColorSecondary'), 6%);
+        border-color: themed('borderBtnColorSecondary');
+        color: themed('textColorPrimary');
+      }
+    }
+  }
+
+  &.active {
+    @include themify($themes) {
+      background-color: darken(themed('buttonColorSecondary'), 6%);
+      border-color: themed('borderBtnColorSecondary');
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &.xm-danger {
+    @extend .xm;
+    color: $white;
+    border: 1px solid $danger-dark;
+    background-color: $danger;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      background-color: darken($danger, 8%);
+    }
+  }
+
+  &.xm-warning {
+    @extend .xm;
+    color: $white;
+    border: 1px solid $warning-dark;
+    background-color: $warning;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      background-color: darken($warning, 8%);
+    }
+  }
+
+  &.xm-success {
+    @extend .xm;
+    color: $white;
+    border: 1px solid $success-dark;
+    background-color: $success;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $white;
+      background-color: darken($success, 8%);
+    }
+  }
+
+  @mixin margin-classes {
+    @for $i from 1 through $sizes {
+      $margin: $i + px;
+
+      /* margin #{$margin} */
+      &.xm-m#{$i} {
+        margin: $margin;
+      }
+
+      &.xm-ml#{$i} {
+        margin-left: $margin;
+      }
+
+      &.xm-mr#{$i} {
+        margin-right: $margin;
+      }
+
+      &.xm-mt#{$i} {
+        margin-top: $margin;
+      }
+
+      &.xm-mb#{$i} {
+        margin-bottom: $margin;
+      }
+
+      &.xm-mx#{$i} {
+        margin-left: $margin;
+        margin-right: $margin;
+      }
+
+      &.xm-my#{$i} {
+        margin-top: $margin;
+        margin-bottom: $margin;
+      }
+    }
+  }
+
+  @include margin-classes;
+
+  @mixin padding-classes {
+    @for $i from 1 through $sizes {
+      $padding: $i + px;
+
+      /* padding #{$padding} */
+      &.xm-p#{$i} {
+        padding: $padding;
+      }
+
+      &.xm-pl#{$i} {
+        padding-left: $padding;
+      }
+
+      &.xm-pr#{$i} {
+        padding-right: $padding;
+      }
+
+      &.xm-pt#{$i} {
+        padding-top: $padding;
+      }
+
+      &.xm-pb#{$i} {
+        padding-bottom: $padding;
+      }
+
+      &.xm-px#{$i} {
+        padding-left: $padding;
+        padding-right: $padding;
+      }
+
+      &.xm-py#{$i} {
+        padding-top: $padding;
+        padding-bottom: $padding;
+      }
+    }
+  }
+
+  @include padding-classes;
+}

@@ -1,0 +1,244 @@
+$bodyfont: 'Montserrat',
+sans-serif;
+$headingfont: 'Montserrat',
+sans-serif;
+
+/* Status Buttons */
+$danger: #af4d4b;
+$success: #27886d;
+$warning: #e99e1d;
+$info: #398bf7;
+
+$light-danger: #f9e7eb;
+$light-success: #e8fdeb;
+$light-warning: #fff8ec;
+$light-info: #cfecfe;
+
+$danger-dark: #6b2b2a;
+$success-dark: #0c4838;
+$warning-dark: #a17317;
+$info-dark: #094161;
+
+/* Normal Color */
+$white: #ffffff;
+$black: #000000;
+
+/* Extra Variable */
+$rgt: right;
+$lft: left;
+$radius: 4px;
+
+/* Light Theme Vars */
+$lightthemecolor: #3e72c7;
+$lightthemecolor-dark: #325ea7;
+$lightthemecolor-light: #3d84f9;
+$pale-sky: #4B5263;
+$gray-chateau: #6E7687;
+$alabaster: #F7F7F7;
+$aqua-haze: #F4F6F9;
+$heather: #b6becc;
+$chablis: #fff5f5;
+
+$selectArrowLight: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 2 1' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23687384' fill-rule='nonzero'><path d='m2 0.14261c0 0.014891-0.00668 0.028064-0.02004 0.039519l-0.93387 0.80069c-0.01336 0.011455-0.028724 0.017182-0.046092 0.017182-0.017368 0-0.032732-0.0057274-0.046092-0.017182l-0.93387-0.80069c-0.01336-0.011455-0.02004-0.024628-0.02004-0.039519s0.00668-0.028064 0.02004-0.039519l0.1002-0.085911c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.78758 0.67526 0.78758-0.67526c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.1002 0.085911c0.01336 0.011455 0.02004 0.024628 0.02004 0.039519z'/></g></g></svg>");
+$cardPatternLight: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f4f6f9' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+/* Dark Theme Vars */
+$darkthemecolor: #217e88;
+$darkthemecolor-dark: #196169;
+$darkthemecolor-light: #36C8D5;
+$shark: #272C33;
+$azure: #3D4554;
+$woodsmoke: #20252A;
+$fog: #B5B9C0;
+$mischka: #eeeff1;
+$dune: #382D2D;
+
+$selectArrowDark: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 2 1' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><g fill='%23dde0e5' fill-rule='nonzero'><path d='m2 0.14261c0 0.014891-0.00668 0.028064-0.02004 0.039519l-0.93387 0.80069c-0.01336 0.011455-0.028724 0.017182-0.046092 0.017182-0.017368 0-0.032732-0.0057274-0.046092-0.017182l-0.93387-0.80069c-0.01336-0.011455-0.02004-0.024628-0.02004-0.039519s0.00668-0.028064 0.02004-0.039519l0.1002-0.085911c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.78758 0.67526 0.78758-0.67526c0.01336-0.011455 0.028724-0.017182 0.046092-0.017182 0.017368 0 0.032732 0.0057274 0.046092 0.017182l0.1002 0.085911c0.01336 0.011455 0.02004 0.024628 0.02004 0.039519z'/></g></g></svg>");
+$cardPatternDark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%233d4554' fill-opacity='1'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+
+/* Channel Maps */
+$VIDEO: #3e93c7;
+$OFDM: #6a4686;
+$ANALOG: #4649a2;
+$VOD: #C55A11;
+$DOCSIS: #548235;
+$OTHERANALOG: #BF9000;
+$OTHERDIGITAL: #E4B500;
+
+$toolTipArrowDark: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 52 29' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><polygon points='26 29 1 1 51 1' fill='%2320252a' fill-rule='nonzero' stroke='%23000000'/></g></svg>");
+$toolTipArrowLight: url("data:image/svg+xml;utf8,<svg version='1.1' viewBox='0 0 52 29' xmlns='http://www.w3.org/2000/svg'><g fill='none' fill-rule='evenodd'><polygon points='26 29 1 1 51 1' fill='%23f7f7f7' fill-rule='nonzero' stroke='%23000000'/></g></svg>");
+
+$qamPatternDark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%234c525a' fill-opacity='1'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+$qamPatternLight: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8'%3E%3Cg fill='%23b6becc' fill-opacity='1'%3E%3Cpath fill-rule='evenodd' d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+
+$breakpoints: (xxs: 440px,
+  xs: 576px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px,
+  xl: 1440px,
+  xxl: 1800px);
+
+$themes: (light: ( // Theme Color
+    themeColorPrimary: $lightthemecolor,
+    themeColorPrimaryDark: $lightthemecolor-dark,
+    themeColorPrimaryLight: $lightthemecolor-light,
+
+    // Typography Colors
+    headingColorPrimary: $pale-sky,
+    textColorPrimary: $pale-sky,
+    textColorSecondary: $gray-chateau,
+    textColorMuted: $heather,
+    textColorTheme: $lightthemecolor,
+    textChartColor: $pale-sky,
+
+    // Form Colors
+    inputBackgroundPrimary: $white,
+    checkBoxPrimary: $heather,
+    checkBoxGroupPrimary: $white,
+    selectArrowPrimary: $selectArrowLight,
+    inputValidationBackground: $chablis,
+    inputDisabledBackground: $alabaster,
+
+    // Table Colors
+    tableHeaderTextPrimary: $gray-chateau,
+
+    // Background Colors
+    themeStageColor: $aqua-haze,
+    sidebarBackgroundColor: $white,
+    sidebarBackgroundActiveColor: $alabaster,
+
+    // Card Colors
+    cardBackgroundPrimary: $white,
+    cardHeaderBackgroundPrimary: $alabaster,
+    cardHeaderBackgroundActive: darken($alabaster, 2%),
+    cardHeaderTextPrimary: $pale-sky,
+    cardPatternPrimary: $cardPatternLight,
+
+    // Button Colors
+    buttonColorPrimary: $lightthemecolor,
+    buttonColorSecondary: $aqua-haze,
+    buttonTextColorPrimary: $alabaster,
+    buttonTextColorSecondary: $pale-sky,
+
+    // Border Colors
+    borderColorPrimary: $heather,
+    borderBtnColorPrimary: $pale-sky,
+    borderBtnColorSecondary: $heather,
+    tableMobileBorderPrimary: $heather,
+    borderColorPrimaryActive: $lightthemecolor-dark,
+
+    // Avatar
+    avatarIcon: $azure,
+    avatarBackground: $aqua-haze,
+
+    // Paint Button Borders
+    paintButtonVOD: darken($VOD, 15%),
+    paintButtonANALOG: darken($ANALOG, 15%),
+    paintButtonVIDEO: darken($VIDEO, 15%),
+    paintButtonOFDM: darken($OFDM, 15%),
+    paintButtonDOCSIS: darken($DOCSIS, 15%),
+    paintButtonOTHERANALOG: darken($OTHERANALOG, 15%),
+    paintButtonOTHERDIGITAL: darken($OTHERDIGITAL, 15%),
+
+    // Tooltip Arrow
+    toolTipArrow: $toolTipArrowLight,
+
+    // Highlight
+    hightlightBackgroundPrimary: lighten($lightthemecolor-light, 30%),
+
+    // Progressbar
+    progressDarkBackground: $heather,
+
+    // Notification
+    notificationBlipBorder: $danger-dark,
+    notificationNewBadge: $lightthemecolor-light,
+
+    // Channel Maps
+    qam64Pattern: $qamPatternLight,
+
+  ),
+
+  dark: ( // Theme Color
+    themeColorPrimary: $darkthemecolor,
+    themeColorPrimaryDark: $darkthemecolor-dark,
+    themeColorPrimaryLight: $darkthemecolor-light,
+
+    // Typography Colors
+    headingColorPrimary: $white,
+    textColorPrimary: $mischka,
+    textColorSecondary: $fog,
+    textColorMuted: $fog,
+    textColorTheme: $darkthemecolor-light,
+    textChartColor: $fog,
+
+    // Form Colors
+    inputBackgroundPrimary: $azure,
+    checkBoxPrimary: $mischka,
+    checkBoxGroupPrimary: $azure,
+    selectArrowPrimary: $selectArrowDark,
+    inputValidationBackground: $dune,
+    inputDisabledBackground: $azure,
+
+    // Table Colors
+    tableHeaderTextPrimary: $fog,
+
+    // Background Colors
+    themeStageColor: $azure,
+    sidebarBackgroundColor: $shark,
+    sidebarBackgroundActiveColor: $woodsmoke,
+
+    // Card Colors
+    cardBackgroundPrimary: $shark,
+    cardHeaderBackgroundPrimary: $woodsmoke,
+    cardHeaderBackgroundActive: darken($woodsmoke, 2%),
+    cardHeaderTextPrimary: $white,
+    cardPatternPrimary: $cardPatternDark,
+
+    // Button Colors
+    buttonColorPrimary: $darkthemecolor,
+    buttonColorSecondary: $azure,
+    buttonTextColorPrimary: $white,
+    buttonTextColorSecondary: $white,
+
+    // Border Colors
+    borderColorPrimary: $black,
+    borderBtnColorPrimary: $black,
+    borderBtnColorSecondary: $black,
+    tableMobileBorderPrimary: $azure,
+    borderColorPrimaryActive: $black,
+
+
+    // Avatar
+    avatarIcon: $white,
+    avatarBackground: $azure,
+
+    // Paint Button Borders
+    paintButtonVOD: $black,
+    paintButtonANALOG: $black,
+    paintButtonVIDEO: $black,
+    paintButtonOFDM: $black,
+    paintButtonDOCSIS: $black,
+    paintButtonOTHERANALOG: $black,
+    paintButtonOTHERDIGITAL: $black,
+
+    // Tooltip Arrow
+    toolTipArrow: $toolTipArrowDark,
+
+    // Highlight
+    hightlightBackgroundPrimary: $darkthemecolor-dark,
+
+    // Progressbar
+    progressDarkBackground: darken($azure, 7%),
+
+    // Calendar Colors
+    dateDisabled: $black,
+
+    // Notification
+    notificationBlipBorder: $black,
+    notificationNewBadge: $darkthemecolor,
+
+    // Channel Maps
+    qam64Pattern: $qamPatternDark,
+
+  ));

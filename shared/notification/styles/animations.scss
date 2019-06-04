@@ -1,0 +1,198 @@
+$animation-notification-name: 'fade';
+
+.notificationToast {
+  animation-fill-mode: both;
+}
+
+.notification-leftTop,
+.notification-leftCenter,
+.notification-leftBottom {
+  .#{$animation-notification-name}In {
+    animation-name: fadeNotificationInLeft;
+  }
+
+  .#{$animation-notification-name}Out {
+    animation-name: fadeNotificationOutLeft;
+  }
+}
+
+.notification-rightTop,
+.notification-rightCenter,
+.notification-rightBottom {
+  .#{$animation-notification-name}In {
+    animation-name: fadeNotificationInRight;
+  }
+
+  .#{$animation-notification-name}Out {
+    animation-name: fadeNotificationOutRight;
+  }
+}
+
+.notification-centerTop {
+  .#{$animation-notification-name}In {
+    animation-name: fadeNotificationInDown;
+  }
+
+  .#{$animation-notification-name}Out {
+    animation-name: fadeNotificationOutUp;
+  }
+}
+
+.notification-centerCenter {
+  .#{$animation-notification-name}In {
+    animation-name: fadeNotificationIn;
+  }
+
+  .#{$animation-notification-name}Out {
+    animation-name: fadeNotificationOut;
+  }
+}
+
+.notification-centerBottom {
+  .#{$animation-notification-name}In {
+    animation-name: fadeNotificationInUp;
+  }
+
+  .#{$animation-notification-name}Out {
+    animation-name: fadeNotificationOutDown;
+  }
+}
+
+
+// Fade in
+
+@keyframes fadeNotificationInLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) scaleX(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeNotificationInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0) scaleX(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeNotificationInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0) scaleY(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeNotificationInDown {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0) scaleY(1.2);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fadeNotificationIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+// Fade out
+
+@keyframes fadeNotificationOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeNotificationOutDown {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+@keyframes fadeNotificationOutLeft {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeNotificationOutRight {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@keyframes fadeNotificationOutUp {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+// Toast collapse
+
+@keyframes appearNotification {
+  0% {
+    max-height: 0;
+  }
+
+  100% {
+    max-height: 50vh;
+  }
+}
+
+@keyframes disappearNotification {
+  0% {
+    max-height: 50vh;
+  }
+
+  100% {
+    max-height: 0;
+  }
+}

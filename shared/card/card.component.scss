@@ -1,0 +1,29 @@
+@import "mixins";
+
+:host {
+  border: 1px solid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-clip: border-box;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  border: 1px solid;
+
+  .header-container {
+    margin: 0.75rem 1.25rem;
+  }
+
+  @include themify($themes) {
+    border-color: themed('borderColorPrimary');
+    background-color: themed('cardBackgroundPrimary');
+  }
+
+  &.remove-border {
+    @include themify($themes) {
+      border: 0;
+    }
+  }
+}

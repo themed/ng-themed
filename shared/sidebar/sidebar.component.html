@@ -1,0 +1,26 @@
+<span appTheme>
+  <nav
+    class="xm sidebar-nav"
+    [class]="position"
+    [ngClass]="{'mini-sidebar': showMinisidebar}">
+    <ul>
+      <li
+        xm
+        *ngFor="let menuItem of menuItems; let i = index"
+        [menuItem]="menuItem"
+        [class]="position"
+        [ngClass]="{
+          'active': this.selectedItem === menuItem.title,
+          'reset': triggerReset,
+          'collapsed-item': showMinisidebar,
+          'has-subitems': menuItem.subMenuItems && menuItem.subMenuItems.length > 0}"
+        [selectedItem]="selectedItem"
+        (itemSelected)="setItemAndEmit(i, menuItem)"
+        (subItemSelected)="setSubItemAndEmit(i, menuItem, $event)"
+        [showMinisidebar]="showMinisidebar"
+        appTheme>
+      </li>
+      <ng-content></ng-content>
+    </ul>
+  </nav>
+</span>

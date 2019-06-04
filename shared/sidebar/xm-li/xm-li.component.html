@@ -1,0 +1,25 @@
+<a
+  (click)="emitItemClicked(menuItem)"
+  [ngClass]="{'has-arrow': menuItem.subMenuItems && menuItem.subMenuItems.length > 0}">
+  <i
+    *ngIf="menuItem.icon"
+    [ngClass]="[menuItem.icon || '']"
+    [style.color]="color">
+  </i>
+  <span class="hide-menu">{{menuItem.title}}</span>
+</a>
+<ul
+  class="collapse"
+  *ngIf="menuItem.subMenuItems"
+  [ngClass]="{'in': selectedItem === menuItem.title}">
+  <li
+    xm-sub
+    *ngFor="let submenuItem of menuItem.subMenuItems; let i = index"
+    [menuItem]="submenuItem"
+    [ngClass]="{'active': selectedItem === submenuItem.title, 'collapsed-item': showMinisidebar}"
+    [selectedItem]="selectedItem"
+    (subItemSelected)="emitSubItemClicked(i, submenuItem)"
+    [showMinisidebar]="showMinisidebar"
+    appTheme>
+  </li>
+</ul>

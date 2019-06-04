@@ -1,0 +1,68 @@
+$notification-backdrop-color: #000000;
+$notification-width:auto !default;
+
+@if $notification-width==auto {
+  $notification-width: 300px;
+}
+
+.notification {
+  display: block;
+  position: fixed;
+  width: $notification-width;
+  z-index: 9999;
+  box-sizing: border-box;
+  pointer-events: none;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+.notification-leftTop,
+.notification-leftCenter,
+.notification-leftBottom {
+  left: 10px;
+}
+
+.notification-rightTop,
+.notification-rightCenter,
+.notification-rightBottom {
+  right: 10px;
+}
+
+.notification-centerTop,
+.notification-centerCenter,
+.notification-centerBottom {
+  left: calc(50% - $notification-width/2);
+}
+
+.notification-leftTop,
+.notification-centerTop,
+.notification-rightTop {
+  top: 10px;
+}
+
+.notification-leftCenter,
+.notification-rightCenter,
+.notification-centerCenter {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.notification-leftBottom,
+.notification-rightBottom,
+.notification-centerBottom {
+  bottom: 10px;
+}
+
+.notification-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: $notification-backdrop-color;
+  opacity: 0;
+  z-index: 9998;
+  transition: opacity .3s;
+}

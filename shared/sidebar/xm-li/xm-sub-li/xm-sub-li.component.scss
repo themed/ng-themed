@@ -1,0 +1,58 @@
+@import 'mixins';
+
+:host {
+
+  a {
+    display: flex;
+    align-items: center;
+    padding: 8px 35px 8px 15px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 100%;
+    min-height: 52px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.4s ease,
+      color 0.4s ease;
+    padding-left: 28px;
+    border-top: 1px solid;
+
+    @include themify($themes) {
+      background-color: themed('sidebarBackgroundColor');
+      color: themed('textColorPrimary');
+      border-top-color: themed('sidebarBackgroundActiveColor');
+      text-decoration: none;
+    }
+
+    &:focus,
+    &:active,
+    &:hover,
+    &.router-link-active {
+      @include themify($themes) {
+        background-color: themed('sidebarBackgroundActiveColor');
+        color: themed('themeColorPrimaryLight');
+      }
+    }
+
+    i {
+      margin: 6px 8px;
+      width: 31px;
+      font-size: 24px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  // mini-sidebar
+
+  &.collapsed-item {
+    a {
+      border-right: 1px solid;
+
+      @include themify($themes) {
+        border-right-color: themed('borderColorPrimary');
+      }
+    }
+  }
+
+}

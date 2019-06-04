@@ -1,0 +1,221 @@
+@import 'mixins';
+
+$arrow-size: 1rem;
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  display: block;
+  max-width: 280px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  text-align: start;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  letter-spacing: normal;
+  word-break: normal;
+  word-spacing: normal;
+  white-space: normal;
+  line-break: auto;
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  border-radius: 0.3rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  @include themify($themes) {
+    border: 1px solid themed('borderColorPrimary');
+  }
+
+  .popover-header {
+    @include themify($themes) {
+      background-color: themed('cardHeaderBackgroundPrimary');
+      border-bottom: 1px solid themed('borderColorPrimary');
+      color: themed('textColorPrimary');
+    }
+  }
+
+  .popover-body {
+    font-size: 1.2rem;
+
+    @include themify($themes) {
+      background-color: themed('cardBackgroundPrimary');
+      color: themed('textColorPrimary');
+    }
+  }
+
+  &.bs-popover-top,
+  &.bs-popover-auto[x-placement^="top"] {
+    margin-bottom: 0.5rem;
+
+    .arrow {
+      bottom: calc((0.5rem + 1px) * -1);
+      width: 1rem;
+      height: 0.5rem;
+      margin: 0 0.3rem;
+
+      &::before {
+        bottom: 0;
+        border-width: 0.5rem 0.5rem 0;
+        border-top-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &::after {
+        bottom: 1px;
+        border-width: 0.5rem 0.5rem 0;
+
+        @include themify($themes) {
+          border-top-color: themed('cardBackgroundPrimary');
+        }
+      }
+    }
+  }
+
+  &.bs-popover-right,
+  &.bs-popover-auto[x-placement^="right"] {
+    margin-left: 0.5rem;
+
+    .arrow {
+      left: calc((0.5rem + 1px) * -1);
+      width: 0.5rem;
+      height: 1rem;
+      margin: 0.3rem 0;
+
+      &::before {
+        left: 0;
+        border-width: 0.5rem 0.5rem 0.5rem 0;
+        border-right-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &::after {
+        left: 1px;
+        border-width: 0.5rem 0.5rem 0.5rem 0;
+
+        @include themify($themes) {
+          border-right-color: themed('cardBackgroundPrimary');
+        }
+      }
+    }
+  }
+
+  &.bs-popover-bottom,
+  &.bs-popover-auto[x-placement^="bottom"] {
+    margin-top: 0.5rem;
+
+    .arrow {
+      top: calc((0.5rem + 1px) * -1);
+
+      &::before {
+        top: 0;
+        border-width: 0 0.5rem 0.5rem 0.5rem;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &::after {
+        top: 1px;
+        border-width: 0 0.5rem 0.5rem 0.5rem;
+
+        @include themify($themes) {
+          border-bottom-color: themed('cardBackgroundPrimary');
+        }
+      }
+    }
+  }
+
+  &.bs-popover-left,
+  &.bs-popover-auto[x-placement^="left"] {
+    margin-right: 0.5rem;
+
+    .arrow {
+      right: calc((0.5rem + 1px) * -1);
+      width: 0.5rem;
+      height: 1rem;
+      margin: 0.3rem 0;
+
+      &::before {
+        right: 0;
+        border-width: 0.5rem 0 0.5rem 0.5rem;
+        border-left-color: rgba(0, 0, 0, 0.25);
+      }
+
+      &::after {
+        right: 1px;
+        border-width: 0.5rem 0 0.5rem 0.5rem;
+
+        @include themify($themes) {
+          border-left-color: themed('cardBackgroundPrimary');
+        }
+      }
+    }
+  }
+
+  &.bs-popover-top .arrow,
+  &.bs-popover-bottom .arrow {
+    left: 50%;
+    margin-left: -$arrow-size / 2;
+  }
+
+  &.bs-popover-top-left .arrow,
+  &.bs-popover-bottom-left .arrow {
+    left: 2em;
+  }
+
+  &.bs-popover-top-right .arrow,
+  &.bs-popover-bottom-right .arrow {
+    left: auto;
+    right: 2em;
+  }
+
+  &.bs-popover-left .arrow,
+  &.bs-popover-right .arrow {
+    top: 50%;
+    margin-top: -$arrow-size / 2;
+  }
+
+  &.bs-popover-left-top .arrow,
+  &.bs-popover-right-top .arrow {
+    top: 0.7em;
+  }
+
+  &.bs-popover-left-bottom .arrow,
+  &.bs-popover-right-bottom .arrow {
+    top: auto;
+    bottom: 0.7em;
+  }
+}
+
+.popover-header {
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+
+  span {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+}
+
+.popover-body {
+  // padding: 0.5rem 0.75rem;
+}
+
+.arrow {
+  position: absolute;
+  display: block;
+
+
+  &::before,
+  &::after {
+    position: absolute;
+    display: block;
+    content: "";
+    border-color: transparent;
+    border-style: solid;
+  }
+}

@@ -1,0 +1,29 @@
+<div class="typeahead-dropdown">
+  <ng-template
+    #rt
+    let-result="result"
+    let-term="term"
+    let-formatter="formatter">
+    <xm-highlight
+      [result]="formatter.call(undefined, result)"
+      [term]="term"></xm-highlight>
+  </ng-template>
+  <ng-template
+    ngFor
+    [ngForOf]="results"
+    let-result
+    let-idx="index">
+    <button
+      type="button"
+      class="typeahead-item"
+      role="option"
+      [id]="id + '-' + idx"
+      [class.active]="idx === activeIdx"
+      (mouseenter)="markActive(idx)"
+      (click)="select(result)">
+      <ng-template
+        [ngTemplateOutlet]="resultTemplate || rt"
+        [ngTemplateOutletContext]="{result: result, term: term, formatter: formatter}"></ng-template>
+    </button>
+  </ng-template>
+</div>

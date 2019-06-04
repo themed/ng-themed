@@ -1,0 +1,23 @@
+/*****************
+Channel Maps - Adjusts fixed panel widths when mini-sidebar is active
+******************/
+
+.cm-upper-panel-group {
+  .mini-sidebar & {
+    left: 70px !important;
+
+    @include respond-below(sm) {
+      left: 0 !important;
+    }
+  }
+}
+
+.cm-lower-panel-group {
+  .mini-sidebar & {
+    left: 70px !important;
+
+    @include respond-below(sm) {
+      left: 0 !important;
+    }
+  }
+}

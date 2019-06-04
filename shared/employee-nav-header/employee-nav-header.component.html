@@ -1,0 +1,118 @@
+<div class="user-header-row">
+  <div
+    class="user-header-account"
+    *ngIf="!loadingColleagues">
+
+    <div class="user-header-title">
+
+      <ng-container *ngIf="userObj.photo; else noUserObjPhoto">
+        <div
+          class="user-header-account-icon user-header-account-photo"
+          [style]="getProfileImageStyle(userObj.photo)"></div>
+      </ng-container>
+      <ng-template #noUserObjPhoto>
+        <div class="user-header-account-icon">
+          <div>
+            <i [ngClass]="componentIcon"></i>
+          </div>
+        </div>
+      </ng-template>
+
+      <div class="user-header-account-name">
+        <div class="user-header-account-subtitle">
+          <span *ngIf="userObj.employee.title; else noDisplayTitle">{{buildDisplayName(userObj)}}</span>
+          <ng-template #noDisplayTitle>
+            <span>Dashboard User</span>
+          </ng-template>
+        </div>
+        <div
+          class="user-header-display-name"
+          *ngIf="userObj">
+          <h2 class="m-b-0 m-r-10">
+            {{userObj.employee.lastName +', ' + userObj.employee.firstName}}
+          </h2>
+          <select
+            #tech_selector
+            (change)="changeTech($event)"
+            id="tech_selector"
+            class="custom-select-arrow-only">
+            <option
+              *ngFor="let p of colleagueList"
+              [value]="p.user"
+              [selected]="p.user === userObj.employee.username">
+              {{p.lastName}} ,
+              {{p.firstName}} {{buildDisplayName(userObj)}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="user-header-buttons">
+      <div class="user-header-button">
+
+        <ng-container [ngSwitch]="componentTitle">
+          <div *ngSwitchCase="'Supervisor View'">
+            <button
+              class="btn btn-themecolor btn-lg-icon-multi"
+              [routerLink]="['/hierarchy-stats', userObj.employee.username]">
+              <div>
+                <i class="icon-account-hierarchy"></i>
+                <div class="btn-lg-icon-multi-text">
+                  <div>View Hierarchy Stats</div>
+                  <div>
+                    {{userObj.employee.firstName + ' ' + userObj.employee.lastName}}
+                  </div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div *ngSwitchCase="'Hierarchy Stats'">
+            <button
+              *ngIf="userObj.employee.userType === 'TECH_SUPER'"
+              class="btn btn-themecolor btn-lg-icon-multi"
+              [routerLink]="['/supervisor-view', userObj.employee.username]">
+              <div>
+                <i class="icon-account-supervisor"></i>
+                <div class="btn-lg-icon-multi-text">
+                  <div>Supervisor View</div>
+                  <div>
+                    {{userObj.employee.firstName + ' ' + userObj.employee.lastName}}
+                  </div>
+                </div>
+              </div>
+            </button>
+            <button
+              *ngIf="accountDirectSupervisor"
+              class="btn btn-themecolor btn-lg-icon-multi"
+              [routerLink]="['/hierarchy-stats', accountDirectSupervisor.hierarchyId]">
+              <div>
+                <i class="icon-account-hierarchy"></i>
+                <div class="btn-lg-icon-multi-text">
+                  <div>View Hierarchy Stats</div>
+                  <div>{{accountDirectSupervisor.label}}</div>
+                </div>
+              </div>
+            </button>
+          </div>
+          <div *ngSwitchCase="'Tech View'">
+            <button
+              *ngIf="accountDirectSupervisor"
+              class="btn btn-themecolor btn-lg-icon-multi"
+              [routerLink]="['/supervisor-view', accountDirectSupervisor.hierarchyId]">
+              <div>
+                <i class="icon-account-supervisor"></i>
+                <div class="btn-lg-icon-multi-text">
+                  <div>View Tech Supervisor</div>
+                  <div>{{accountDirectSupervisor.label}}</div>
+                </div>
+              </div>
+            </button>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+
+  </div>
+</div>
